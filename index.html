@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TITRE SEO OPTIMISÉ -->
-    <title>GR8Gware | Agence de Développement Sur-Mesure à Paris, Rennes & Nantes</title>
+    <title>GR8Gware | Agence de Développement Gameware, IA et Data Sur-Mesure à Paris, Rennes & Nantes</title>
     <!-- DESCRIPTION SEO OPTIMISÉE -->
     <meta name="description" content="Agence de développement experte en Gameware, IA et Data. Nous analysons et développons des solutions pour Directeurs SI, Marketing, RH et Événementiel, intervenant sur Paris, Rennes et Nantes. Premier expert certifié IA GenLead par Google en France.">
     
@@ -35,6 +35,15 @@
         }
         .btn-primary:hover {
             background-color: #6366F1; /* Indigo plus clair */
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background-color: var(--secondary);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+        }
+        .btn-secondary:hover {
+            background-color: #FB923C;
             transform: translateY(-1px);
         }
         .card-light {
@@ -88,7 +97,10 @@
                 <a href="#ia-coach" class="text-gray-600 hover:text-primary transition duration-200 font-bold text-primary">IA GenLead</a>
                 <a href="#process" class="text-gray-600 hover:text-primary transition duration-200">Processus</a>
                 <a href="#solutions" class="text-gray-600 hover:text-primary transition duration-200">Pour Qui ?</a>
-                <a href="#contact" class="btn-primary px-4 py-2 rounded-lg text-white shadow-lg">Démarrer l'Analyse</a>
+                <!-- Lien Démarrer l'Analyse mis à jour -->
+                <a href="mailto:gregoiremm@gmail.com?subject=Demande%20d'Analyse%20de%20Projet%20GR8Gware" class="btn-primary px-4 py-2 rounded-lg text-white shadow-lg">Démarrer l'Analyse</a>
+                <!-- Bouton pour ouvrir le back-office -->
+                <button id="admin-button" class="text-gray-600 hover:text-secondary transition duration-200">Admin</button>
             </nav>
             <button id="menu-button" class="md:hidden text-gray-800 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -101,10 +113,34 @@
                  <a href="#ia-coach" class="block px-3 py-2 rounded-md text-base font-medium text-primary hover:bg-gray-100 font-bold">IA GenLead</a>
                 <a href="#process" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Notre Processus</a>
                 <a href="#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Pour Qui ?</a>
-                <a href="#contact" class="w-full text-left btn-primary px-3 py-2 rounded-md text-white text-base font-medium mt-2">Démarrer l'Analyse</a>
+                <!-- Lien Démarrer l'Analyse mis à jour -->
+                <a href="mailto:gregoiremm@gmail.com?subject=Demande%20d'Analyse%20de%20Projet%20GR8Gware" class="w-full text-left btn-primary px-3 py-2 rounded-md text-white text-base font-medium mt-2">Démarrer l'Analyse</a>
+                <button id="admin-button-mobile" class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Admin</button>
             </div>
         </div>
     </header>
+    
+    <!-- MODAL DU BACK-OFFICE (Identique) -->
+    <div id="admin-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl p-8 max-w-lg w-full shadow-2xl">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-2">Back-Office GR8Gware</h2>
+            <!-- Info utilisateur pour la sécurité (Firestore Rules) -->
+            <p id="admin-user-info" class="text-sm text-gray-500 mb-4"></p>
+
+            <h3 class="text-xl font-semibold mb-3">Éditer le Slogan Principal</h3>
+            
+            <label for="hero-slogan-input" class="block text-sm font-medium text-gray-700 mb-1">Nouveau Slogan (Section Hero)</label>
+            <textarea id="hero-slogan-input" rows="3" class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-primary focus:border-primary text-gray-900"></textarea>
+            
+            <button id="save-content-btn" onclick="saveContent()" class="btn-primary w-full px-4 py-2 rounded-lg text-white font-bold mt-4">
+                Sauvegarder et Publier les Changements
+            </button>
+            <!-- Message de confirmation de publication dans Firestore -->
+            <p id="admin-message" class="mt-3 text-sm text-green-600 hidden"></p>
+
+            <button id="close-admin-btn" class="mt-6 text-gray-500 hover:text-gray-900 text-sm">Fermer l'Administration</button>
+        </div>
+    </div>
 
     <main>
         <!-- Section Hero (Accueil) : Cible et Proposition de Valeur -->
@@ -114,7 +150,8 @@
                 <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-snug text-gray-900">
                     Agence de Développement <span class="text-gradient-main">Sur-Mesure</span> : Paris, Rennes, Nantes
                 </h1>
-                <p class="mt-6 text-xl text-gray-600 max-w-4xl mx-auto">
+                <!-- Contenu MODIFIABLE par le back-office et mis à jour via JS/Firestore -->
+                <p id="hero-slogan" class="mt-6 text-xl text-gray-600 max-w-4xl mx-auto">
                     Nous sommes le partenaire technique des **Directeurs SI, Marketing, RH et Événementiel** en France. Nous transformons vos visions stratégiques en outils digitaux **conversnels**, priorisant l'exploitation de la donnée.
                 </p>
                 <!-- Liste des technologies clés pour le référencement et la crédibilité -->
@@ -122,7 +159,8 @@
                     Développement sur mesure : Gameware, Agents IA, Phygital, Data Exploitation, Web/Mobile.
                 </div>
                 <div class="mt-10 flex justify-center">
-                    <a href="#contact" class="btn-primary px-8 py-4 text-lg rounded-xl font-bold text-white shadow-xl">
+                    <!-- Lien Analyser mon Besoin Spécifique mis à jour -->
+                    <a href="mailto:gregoiremm@gmail.com?subject=Demande%20d'Analyse%20de%20Projet%20GR8Gware" class="btn-primary px-8 py-4 text-lg rounded-xl font-bold text-white shadow-xl">
                         Analyser mon Besoin Spécifique
                     </a>
                 </div>
@@ -215,7 +253,8 @@
                         <p class="mt-4 text-xl text-gray-700">
                             Nous sommes fiers d'être parmi les premiers experts certifiés par Google. Cette reconnaissance assure une expertise de pointe pour l'intégration de l'IA Générative dans vos processus métiers, de l'idéation à la production.
                         </p>
-                        <a href="#contact" class="btn-primary inline-flex mt-8 px-6 py-3 text-md rounded-xl font-bold text-white shadow-lg">
+                         <!-- Lien Démarrer mon Projet IA mis à jour -->
+                        <a href="mailto:gregoiremm@gmail.com?subject=Demande%20d'Accompagnement%20IA%20GenLead%20GR8Gware" class="btn-primary inline-flex mt-8 px-6 py-3 text-md rounded-xl font-bold text-white shadow-lg">
                             Démarrer mon Projet IA
                         </a>
                     </div>
@@ -334,165 +373,232 @@
                         <div class="text-primary mb-3 mx-auto">
                             <svg class="w-10 h-10 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-1-3M14 8c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6h-6m-6-6V6m0 12v-2m-6-2H6m12 0h-2"></path></svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Direction SI (DSI)</h3>
-                        <p class="text-gray-600 text-sm">Intégrer l'IA, le conversationnel et l'exploitation des données de manière sécurisée et auditable.</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Direction SI / DSI</h3>
+                        <p class="text-gray-600 text-sm">Sécuriser l'intégration des solutions IA et optimiser l'exploitation des infrastructures de données.</p>
                     </div>
                     <!-- Directeur RH -->
                     <div class="p-6 card-light rounded-xl text-center hover:shadow-xl transition duration-300 border-b-4 border-primary">
                         <div class="text-primary mb-3 mx-auto">
-                            <svg class="w-10 h-10 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h-4v-6h-2v6H7v-6H5v6H3V4h18v16h-4z"></path></svg>
+                            <svg class="w-10 h-10 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20h-2m2 0h2m-4-10a3 3 0 11-6 0 3 3 0 016 0zm-2 0a1 1 0 10-2 0 1 1 0 002 0zM12 4a3 3 0 00-3 3v1a2 2 0 002 2h2a2 2 0 002-2V7a3 3 0 00-3-3z"></path></svg>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Direction RH</h3>
-                        <p class="text-gray-600 text-sm">Améliorer l'efficience, le bien-être et l'onboarding grâce à la gamification et aux assistants IA.</p>
+                        <p class="text-gray-600 text-sm">Développer des outils d'onboarding gamifiés et mesurer l'impact des initiatives QVT par la donnée.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section Contact / Call to Action Final -->
-        <section id="contact" class="py-20 sm:py-28 bg-background-light border-t border-gray-200">
+        <!-- Section Contact / CTA -->
+        <section id="contact" class="py-20 sm:py-28 bg-primary">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl leading-tight">
-                    <span class="text-gradient-main">Un besoin spécifique ?</span> Analysons-le ensemble.
-                </h2>
-                <p class="mt-4 text-xl text-gray-600">
-                    Nous intervenons principalement sur les métropoles de **Paris, Rennes et Nantes**. Remplissez ce formulaire d'analyse de besoin pour démarrer notre processus de développement. Nous vous recontactons en moins de 24h.
-                </p>
-                
-                <!-- Formulaire de Contact -->
-                <div class="mt-10 p-8 card-light rounded-xl shadow-2xl shadow-indigo-100">
-                    <form id="contact-form" onsubmit="handleFormSubmit(event)"> 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-left text-sm font-medium text-gray-700 mb-1">Votre Nom et Fonction (Ex: DSI)</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-primary focus:border-primary">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-left text-sm font-medium text-gray-700 mb-1">Email Professionnel</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-primary focus:border-primary">
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <label for="type" class="block text-left text-sm font-medium text-gray-700 mb-1">Type de Projet</label>
-                            <select id="type" name="type" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-primary focus:border-primary">
-                                <option value="">-- Sélectionnez la Direction concernée --</option>
-                                <option value="marketing">Marketing / Commercial (Engagement)</option>
-                                <option value="evenementiel">Événementiel (Activation de Stand)</option>
-                                <option value="si">DSI / SI (Intégration IA / Développement)</option>
-                                <option value="rh">RH / Formation (Efficience / Bien-être)</option>
-                                <option value="ia-coach">Coach IA GenLead (Cadrage Stratégique)</option>
-                            </select>
-                        </div>
-                        <div class="mt-6">
-                            <label for="message" class="block text-left text-sm font-medium text-gray-700 mb-1">Votre Challenge (Analyse de Besoin)</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-primary focus:border-primary" placeholder="Décrivez votre objectif, le problème à résoudre ou l'innovation à développer..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary w-full px-8 py-4 rounded-xl text-white font-bold text-lg mt-6 shadow-xl shadow-indigo-300/50">
-                            Démarrer l'Analyse Gratuite
-                        </button>
-                    </form>
-                    <div id="form-message" class="mt-6 text-center text-lg font-semibold hidden"></div>
-                </div>
+                <h2 class="text-4xl font-extrabold text-white sm:text-5xl">Prêt à Transformer votre Vision en Solution Digitale ?</h2>
+                <p class="mt-4 text-xl text-indigo-200">Contactez nos experts pour une analyse gratuite de votre besoin en Gameware, IA ou Data.</p>
+                <!-- Lien Contact Maintenant mis à jour -->
+                <a href="mailto:gregoiremm@gmail.com?subject=Demande%20de%20Contact%20GR8Gware%20-%20Informations" class="btn-secondary inline-flex mt-8 px-10 py-4 text-xl rounded-xl font-bold text-white shadow-xl hover:bg-orange-600">
+                    Prendre Contact Maintenant
+                </a>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-8">
+    <footer class="bg-gray-800 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
-            <div class="text-xl font-extrabold mb-3 text-white">GR8<span class="text-secondary">G</span>ware</div>
-            <p>&copy; <span id="year"></span> Agence de Développement Sur-Mesure | Paris, Rennes, Nantes. Expertise IA GenLead.</p>
-            <div class="mt-4 text-sm space-x-4">
-                <a href="#expertise" class="hover:text-white">Nos Expertises</a>
-                <a href="#ia-coach" class="hover:text-white">Coach IA GenLead</a>
-                <a href="#process" class="hover:text-white">Processus</a>
-                <a href="#contact" class="hover:text-white">Contact</a>
-            </div>
+            <p class="text-lg font-extrabold text-white mb-2">GR8<span class="text-secondary">G</span>ware</p>
+            <p class="text-sm">&copy; 2025 GR8Gware. Tous droits réservés.</p>
+            <p class="text-xs mt-1">Paris, Rennes, Nantes.</p>
+            <!-- Ajout de l'email dans le pied de page à titre informatif -->
+            <p class="text-xs mt-1 text-white">Contact : <a href="mailto:gregoiremm@gmail.com" class="text-indigo-300 hover:text-white transition duration-200">gregoiremm@gmail.com</a></p>
         </div>
     </footer>
+    
+    <!-- SCRIPT DE FONCTIONNALITÉS (NAVBAR MOBILE & FIREBASE ADMIN) -->
+    <script type="module">
+        // --- 1. CONFIGURATION ET INITIALISATION FIREBASE ---
+        
+        // Variables globales fournies par l'environnement Canvas
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
 
-    <!-- JavaScript pour les interactions et l'adaptabilité -->
-    <script>
-        // Fonction utilitaire pour le message de feedback (remplace alert)
-        function showFeedback(message, isSuccess = true) {
-            const messageElement = document.getElementById('form-message');
-            messageElement.textContent = message;
-            messageElement.classList.remove('hidden', 'text-red-600', 'text-green-600');
-            messageElement.classList.add(isSuccess ? 'text-green-600' : 'text-red-600', 'block');
+        // Importations nécessaires pour Firebase (Auth, Firestore)
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // Initialisation des services
+        setLogLevel('debug'); // Active les logs pour le debug Firestore
+        let db, auth;
+        let userId = 'anonymous'; 
+        let isAuthReady = false; 
+        
+        // Éléments du DOM
+        const heroSloganElement = document.getElementById('hero-slogan');
+        const heroSloganInput = document.getElementById('hero-slogan-input');
+        const adminModal = document.getElementById('admin-modal');
+        const adminUserInfo = document.getElementById('admin-user-info');
+        const adminMessage = document.getElementById('admin-message');
+        const adminButton = document.getElementById('admin-button');
+        const adminButtonMobile = document.getElementById('admin-button-mobile');
+        const closeAdminBtn = document.getElementById('close-admin-btn');
+        const saveContentBtn = document.getElementById('save-content-btn');
+        
+        // Chemin de la collection publique pour le contenu du site
+        // Le contenu doit être accessible à tous (public) mais modifiable uniquement par l'utilisateur authentifié
+        const contentDocPath = `/artifacts/${appId}/public/data/siteContent/hero`;
 
-            // Cacher le message après 5 secondes
-            setTimeout(() => {
-                messageElement.classList.add('hidden');
-            }, 5000);
+
+        // --- 2. GESTION DE L'AUTHENTIFICATION ET DE LA BASE DE DONNÉES ---
+
+        function initFirebaseAndAuth() {
+            try {
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+
+                onAuthStateChanged(auth, async (user) => {
+                    if (user) {
+                        // Utilisateur authentifié (custom token ou anonyme)
+                        userId = user.uid;
+                        adminUserInfo.textContent = `Connecté en tant que: ${userId}`;
+                    } else {
+                        // Tente d'abord de se connecter avec le jeton fourni
+                        if (initialAuthToken) {
+                            try {
+                                await signInWithCustomToken(auth, initialAuthToken);
+                            } catch (error) {
+                                console.error("Erreur lors de la connexion avec le jeton custom :", error);
+                                // En cas d'échec, se connecter anonymement
+                                await signInAnonymously(auth);
+                            }
+                        } else {
+                            // Si aucun jeton n'est fourni, se connecter anonymement
+                            await signInAnonymously(auth);
+                        }
+                    }
+                    isAuthReady = true;
+                    // Lancement du chargement de contenu après l'authentification
+                    loadContent(); 
+                });
+            } catch (error) {
+                console.error("Erreur d'initialisation de Firebase:", error);
+                adminUserInfo.textContent = "Erreur: Impossible de se connecter à la base de données.";
+                isAuthReady = true; // Permet au reste de l'application de continuer
+            }
         }
 
-        // Gestion de l'envoi du formulaire (Simulation de l'envoi)
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            const name = formData.get('name');
-            const type = formData.get('type');
+        // --- 3. FONCTIONS DE GESTION DE CONTENU (Firestore) ---
+
+        // Écoute en temps réel les changements du contenu (front-end et back-office)
+        function loadContent() {
+            if (!isAuthReady || !db) return;
+
+            const docRef = doc(db, contentDocPath);
             
-            let thankYouMessage = `Merci, ${name} ! Votre demande d'analyse de besoin (Projet ${type.toUpperCase()}) a été transmise. Un expert vous contactera sous 24h pour évaluer le challenge.`;
+            // onSnapshot permet d'écouter les mises à jour en temps réel
+            onSnapshot(docRef, (docSnap) => {
+                if (docSnap.exists() && docSnap.data().slogan) {
+                    const data = docSnap.data();
+                    const newSlogan = data.slogan;
+                    
+                    // Mettre à jour le Front-End
+                    heroSloganElement.innerHTML = newSlogan;
+                    
+                    // Mettre à jour l'input du Back-Office
+                    heroSloganInput.value = newSlogan;
 
-            console.log(`Tentative d'envoi du formulaire par ${name} (Type: ${type})...`);
+                } else {
+                    // Si le document n'existe pas, utiliser la valeur par défaut du HTML
+                    const defaultSlogan = heroSloganElement.textContent.trim();
+                    heroSloganInput.value = defaultSlogan;
+                    // Tenter de créer le document initial pour le rendre modifiable
+                    saveContent(defaultSlogan, false); 
+                }
+            }, (error) => {
+                console.error("Erreur lors de la récupération des données en temps réel:", error);
+                adminMessage.textContent = "Erreur de connexion à Firestore. Vérifiez la console.";
+            });
+        }
+        
+        // Sauvegarde le contenu dans Firestore
+        async function saveContent(slogan = null, showMessage = true) {
+            if (!isAuthReady || !db || !userId) {
+                console.warn("Firebase non prêt ou utilisateur non authentifié.");
+                if(showMessage) {
+                    adminMessage.textContent = "Opération non autorisée. Connectez-vous.";
+                    adminMessage.classList.remove('hidden');
+                }
+                return;
+            }
 
-            // Simuler une attente de 1 seconde
-            setTimeout(() => {
-                form.reset();
-                showFeedback(thankYouMessage, true);
-            }, 1000);
+            // Récupère la valeur de l'input ou utilise l'argument
+            const newSlogan = slogan !== null ? slogan : heroSloganInput.value;
+            
+            try {
+                const docRef = doc(db, contentDocPath);
+                
+                // setDoc crée ou écrase le document
+                await setDoc(docRef, { 
+                    slogan: newSlogan,
+                    lastModifiedBy: userId,
+                    timestamp: new Date().toISOString()
+                }, { merge: true });
+
+                if (showMessage) {
+                    adminMessage.textContent = "🎉 Contenu publié dans la base de données Firestore avec succès !";
+                    adminMessage.classList.remove('hidden');
+                    saveContentBtn.disabled = true; // Désactive après sauvegarde
+                    setTimeout(() => adminMessage.classList.add('hidden'), 5000);
+                }
+                console.log("Document sauvegardé avec succès par l'utilisateur:", userId);
+
+            } catch (e) {
+                console.error("Erreur lors de l'écriture du document:", e);
+                if (showMessage) {
+                    adminMessage.textContent = `Erreur de sauvegarde: ${e.message}`;
+                    adminMessage.classList.remove('hidden');
+                }
+            }
         }
 
-        // Initialisation du pied de page et du menu mobile
-        document.addEventListener('DOMContentLoaded', () => {
-            // Année courante dans le footer
-            document.getElementById('year').textContent = new Date().getFullYear();
+        // --- 4. GESTION DE L'INTERFACE UTILISATEUR ET ÉVÉNEMENTS ---
+        
+        function openAdminModal() {
+            adminModal.classList.remove('hidden');
+            adminMessage.classList.add('hidden');
+            saveContentBtn.disabled = false;
+        }
 
-            // Gestion du menu mobile
-            const menuButton = document.getElementById('menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navLinks = mobileMenu.querySelectorAll('a');
+        function closeAdminModal() {
+            adminModal.classList.add('hidden');
+        }
 
-            menuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            // Fermer le menu après un clic sur un lien (pour mobile)
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
-
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                         // Calcule la position avec un décalage pour la barre de navigation fixe
-                        const headerHeight = document.querySelector('header').offsetHeight;
-                        const targetPosition = targetElement.offsetTop - headerHeight;
-
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                    
-                    // Close mobile menu if open
-                    if (!mobileMenu.classList.contains('hidden')) {
-                         mobileMenu.classList.add('hidden');
-                    }
-                });
-            });
+        // Événement pour la sauvegarde
+        heroSloganInput.addEventListener('input', () => {
+            saveContentBtn.disabled = false; // Réactive le bouton si l'input change
+            adminMessage.classList.add('hidden');
         });
-    </script>
 
+        // Gestionnaires d'événements pour le modal admin
+        adminButton.addEventListener('click', openAdminModal);
+        adminButtonMobile.addEventListener('click', openAdminModal);
+        closeAdminBtn.addEventListener('click', closeAdminModal);
+        
+        // Gestionnaire d'événements pour le menu mobile
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Lance l'initialisation de Firebase au chargement de la page
+        initFirebaseAndAuth();
+
+        // Rendre saveContent disponible globalement pour l'appel depuis le bouton HTML
+        window.saveContent = saveContent;
+    </script>
 </body>
 </html>
