@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stratégie IA : L'Agent Conversationnel Augmenté</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .article-content {
+            font-family: 'Merriweather', serif;
+            line-height: 1.8;
+            color: #374151;
+        }
+        .chatbot-container {
+            min-height: 600px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .messages-list {
+            flex-grow: 1;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-8">
+        
+        <!-- Colonne 1: Article sur la Stratégie IA -->
+        <article id="article-content" class="lg:w-2/3 bg-white p-6 sm:p-10 rounded-xl shadow-2xl border border-gray-100">
+            <header class="mb-8 border-b pb-4">
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-3 leading-tight">
+                    Optimiser la Stratégie d'Entreprise avec les Agents IA
+                </h1>
+                <p class="text-lg text-indigo-600 font-semibold">
+                    Comment le Grounding RAG transforme la prise de décision.
+                </p>
+                <div class="text-sm text-gray-500 mt-2">
+                    Par: L'Équipe d'Analyse IA | Publié le 18 Novembre 2025
+                </div>
+            </header>
+
+            <div class="article-content text-lg space-y-6">
+                
+                <section>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4 mt-6">
+                        L'ère des Agents Augmentés (RAG)
+                    </h2>
+                    <p>
+                        L'intégration de l'Intelligence Artificielle ne se limite plus à l'automatisation de tâches simples. Nous entrons dans l'ère des **Agents Augmentés par Récupération (RAG - Retrieval-Augmented Generation)**. Cette approche permet aux modèles de langage de grande taille (LLMs) de se baser sur des documents spécifiques, éliminant les "hallucinations" et garantissant des réponses ancrées dans la réalité et la documentation de l'entreprise.
+                    </p>
+                    <p>
+                        Pour une entreprise, cela signifie que les agents ne répondent plus avec des connaissances générales et parfois obsolètes, mais avec la **stratégie interne, les politiques, ou le contenu des documents officiels** les plus récents.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4 mt-6">
+                        Le Triple Impact sur la Stratégie
+                    </h2>
+                    <p>
+                        L'adoption d'un agent conversationnel "groundé" sur le contenu stratégique de l'entreprise a un impact majeur sur trois piliers :
+                    </p>
+                    <h3 class="text-2xl font-semibold text-gray-700 mt-4 mb-2">
+                        1. Cohérence Interne
+                    </h3>
+                    <p>
+                        Chaque collaborateur, du stagiaire au CEO, accède à une source unique et fiable d'information stratégique. Par exemple, si notre stratégie est de **doubler l'investissement en R&D mobile et de réduire les coûts opérationnels de 15%** au cours des deux prochains exercices, l'agent s'assurera que toute question relative aux budgets ou aux priorités reflète fidèlement cette direction.
+                    </p>
+                    <h3 class="text-2xl font-semibold text-gray-700 mt-4 mb-2">
+                        2. Réduction du Temps de Recherche
+                    </h3>
+                    <p>
+                        Les analystes et les chefs de projet passent en moyenne 20% de leur temps à chercher des informations pertinentes dans des silos de documents. Un agent RAG peut instantanément synthétiser les informations nécessaires, par exemple, en expliquant **les principaux risques identifiés pour le lancement du produit A** en recoupant les notes de la dernière réunion du comité de direction et le rapport d'analyse de marché.
+                    </p>
+                    <h3 class="text-2xl font-semibold text-gray-700 mt-4 mb-2">
+                        3. Simulation et Planification
+                    </h3>
+                    <p>
+                        L'agent ne fait pas que répondre ; il aide à la planification. En utilisant la documentation interne comme base, il peut simuler les impacts potentiels de décisions. Si l'utilisateur demande : "**Compte tenu de notre objectif de croissance de 20% en Europe, quel budget marketing doit-on allouer à l'Allemagne ?**" L'agent peut croiser les chiffres du plan annuel et les hypothèses de marché pour fournir une recommandation étayée.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4 mt-6">
+                        Conclusion : Le Partenaire IA de l'Exécutif
+                    </h2>
+                    <p>
+                        L'agent conversationnel augmenté par RAG devient le partenaire silencieux et omniscient de l'équipe exécutive. Il garantit que les décisions sont non seulement rapides, mais surtout alignées avec la vision stratégique de l'entreprise.
+                    </p>
+                    <p class="font-bold text-indigo-600">
+                        Testez-le ! Posez au chatbot ci-contre une question basée uniquement sur le contenu de cet article.
+                    </p>
+                </section>
+
+            </div>
+        </article>
+
+        <!-- Colonne 2: Chatbot de Démonstration -->
+        <aside class="lg:w-1/3 sticky top-8 h-full">
+            <div class="chatbot-container bg-white rounded-xl shadow-2xl p-6 border border-gray-100">
+                <h2 class="text-2xl font-bold text-center text-gray-900 mb-4 border-b pb-3">
+                    Agent Stratégique (RAG Demo)
+                </h2>
+                <p class="text-sm text-center text-gray-500 mb-4">
+                    Ce chatbot est "groundé" uniquement sur le contenu de l'article à gauche.
+                </p>
+
+                <!-- Zone des messages -->
+                <div id="messages-list" class="messages-list space-y-4 p-4 mb-4 bg-gray-50 rounded-lg border">
+                    <!-- Les messages s'afficheront ici -->
+                    <div class="flex justify-start">
+                        <div class="bg-indigo-100 text-indigo-900 p-3 rounded-xl rounded-tl-none max-w-xs">
+                            Bonjour ! Posez-moi une question sur notre stratégie d'entreprise en vous basant sur l'article à gauche. Par exemple : "Quels sont les trois impacts de l'agent augmenté ?"
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulaire d'entrée -->
+                <div class="flex">
+                    <input type="text" id="user-input" placeholder="Écrivez votre question ici..." class="flex-grow p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:border-indigo-500" onkeydown="if(event.key === 'Enter') sendMessage()">
+                    <button onclick="sendMessage()" id="send-button" class="bg-indigo-600 text-white p-3 rounded-r-lg hover:bg-indigo-700 transition duration-150 flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </div>
+                <div id="loading-indicator" class="text-center text-sm text-indigo-500 mt-2 hidden">
+                    L'Agent IA est en train d'analyser le contenu...
+                </div>
+                <div id="error-message" class="text-center text-sm text-red-500 mt-2 hidden">
+                    Une erreur est survenue lors de la communication avec l'API. Veuillez réessayer.
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <script type="text/javascript">
+        // Fonctionnalités du Chatbot
+        
+        // Clé API vide pour le Canvas
+        const apiKey = "";
+        const modelName = 'gemini-2.5-flash-preview-09-2025';
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+
+        const messagesList = document.getElementById('messages-list');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const errorMessageDiv = document.getElementById('error-message');
+        const articleContent = document.getElementById('article-content').innerText;
+
+        // Historique de la conversation (pour le contexte)
+        let chatHistory = [];
+        
+        /**
+         * Ajoute un message à la liste des messages
+         * @param {string} text - Le contenu du message.
+         * @param {string} sender - 'user' ou 'bot'.
+         */
+        function displayMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('flex', 'mb-2');
+
+            if (sender === 'user') {
+                messageDiv.classList.add('justify-end');
+                messageDiv.innerHTML = `
+                    <div class="bg-indigo-600 text-white p-3 rounded-xl rounded-br-none max-w-xs sm:max-w-md shadow-md">
+                        ${text}
+                    </div>
+                `;
+            } else {
+                messageDiv.classList.add('justify-start');
+                // Nettoyer le texte du bot (retirer les éventuels markdown inutiles)
+                const cleanText = text.replace(/(\*\*|__)/g, ''); 
+                messageDiv.innerHTML = `
+                    <div class="bg-gray-200 text-gray-800 p-3 rounded-xl rounded-tl-none max-w-xs sm:max-w-md shadow-md">
+                        ${cleanText}
+                    </div>
+                `;
+            }
+            messagesList.appendChild(messageDiv);
+            messagesList.scrollTop = messagesList.scrollHeight; // Scroll vers le bas
+        }
+
+        /**
+         * Gère l'envoi du message utilisateur.
+         */
+        async function sendMessage() {
+            const userText = userInput.value.trim();
+            if (userText === '') return;
+
+            displayMessage(userText, 'user');
+            userInput.value = '';
+            
+            // Ajouter le message utilisateur à l'historique
+            chatHistory.push({ role: "user", parts: [{ text: userText }] });
+
+            // Afficher l'indicateur de chargement
+            loadingIndicator.classList.remove('hidden');
+            sendButton.disabled = true;
+            errorMessageDiv.classList.add('hidden');
+            
+            // Le prompt système pour guider le modèle à utiliser uniquement le contenu de l'article
+            const systemPrompt = `Tu es un Agent Stratégique d'entreprise. Ton rôle est de répondre aux questions de l'utilisateur EN FRANÇAIS en te basant STRICTEMENT et UNIQUEMENT sur le texte de l'article ci-dessous. Ne fais aucune référence à des connaissances externes, à la date du jour, ou à ta nature d'IA. Ton objectif est de démontrer la puissance du RAG (Grounding).
+
+            Contenu de l'Article :
+            ---
+            ${articleContent}
+            ---
+
+            Si la réponse à la question de l'utilisateur ne se trouve pas dans ce texte, tu dois répondre de manière simple et concise : "Je ne peux répondre à cette question car elle ne figure pas dans l'article."`;
+
+            try {
+                const payload = {
+                    contents: chatHistory,
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    },
+                };
+
+                let response;
+                let success = false;
+                let retries = 0;
+                const maxRetries = 5;
+                let delay = 1000; // 1 second
+
+                // Implémentation de l'exponential backoff
+                while (!success && retries < maxRetries) {
+                    try {
+                        response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (response.ok) {
+                            success = true;
+                        } else if (response.status === 429) {
+                            // Trop de requêtes (throttling)
+                            console.warn(`Tentative ${retries + 1} : Trop de requêtes. Attente de ${delay / 1000}s.`);
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                            delay *= 2; // Doubler le délai
+                        } else {
+                            // Autres erreurs HTTP
+                            throw new Error(`Erreur HTTP: ${response.status}`);
+                        }
+                    } catch (error) {
+                        console.error("Erreur lors de la tentative de fetch:", error);
+                        if (retries < maxRetries - 1) {
+                            console.warn(`Tentative ${retries + 1} : Erreur. Attente de ${delay / 1000}s avant de réessayer.`);
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                            delay *= 2;
+                        } else {
+                            throw error; // Propager l'erreur après la dernière tentative
+                        }
+                    }
+                    retries++;
+                }
+
+                if (!success) {
+                    throw new Error("Échec de la communication avec l'API après plusieurs tentatives.");
+                }
+
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+
+                let botText = "Désolé, je n'ai pas pu générer de réponse.";
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    botText = candidate.content.parts[0].text;
+                }
+
+                displayMessage(botText, 'bot');
+                
+                // Ajouter la réponse du bot à l'historique
+                chatHistory.push({ role: "model", parts: [{ text: botText }] });
+
+            } catch (error) {
+                console.error("Erreur fatale de l'API:", error);
+                errorMessageDiv.classList.remove('hidden');
+                displayMessage("Désolé, je ne parviens pas à traiter votre demande pour le moment. Veuillez vérifier la console pour les détails de l'erreur.", 'bot');
+            } finally {
+                loadingIndicator.classList.add('hidden');
+                sendButton.disabled = false;
+                userInput.focus();
+            }
+        }
+
+        // S'assurer que le focus est sur l'input au chargement
+        window.onload = () => {
+            userInput.focus();
+        };
+
+    </script>
+</body>
+</html>
