@@ -106,9 +106,93 @@
         .shortcut-button {
             @apply flex items-center justify-center p-2 text-xs sm:text-sm bg-white border border-indigo-400 text-indigo-700 rounded-lg hover:bg-indigo-100 transition duration-150 shadow-md;
         }
+
+          :root {
+            --primary: #7C3AED;
+            --secondary: #10B981;
+            --background-light: #F9FAFB;
+            --text-dark: #1F2937;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+        }
+        .text-gradient-main {
+            background-image: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+        }
+        .btn-primary:hover {
+            background-color: #8B5CF6;
+            transform: translateY(-1px);
+        }
+        .icon-box-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            display: inline-flex;
+            margin-bottom: 1rem;
+        }
+        .ia-step-card {
+            background-color: white;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary);
+        }
+        .ia-step-card:hover {
+            border-left: 4px solid var(--secondary);
+            transform: translateY(-2px);
+        }
+
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .article-content {
+            font-family: 'Merriweather', serif;
+            line-height: 1.8;
+            color: #374151;
+        }
+        .chatbot-container {
+            min-height: 600px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .messages-list {
+            flex-grow: 1;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
-<body class="bg-gray-50 flex justify-center p-4 sm:p-8">
+<body class="antialiased">
+      <!-- Navbar simplifiée -->
+    <header class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold tracking-tight text-gray-900">
+                GR8<span class="text-secondary">G</span>ware
+            </a>
+            <nav class="space-x-4">
+                <a href="index.html#expertise" class="text-gray-600 hover:text-primary transition duration-200">Retour Accueil</a>
+                <a href="digitalness.html" class="text-gray-600 hover:text-secondary transition duration-200">Digitalness</a>
+                <a href="strategie_ia_chatbot_entreprise.html" class="text-gray-600 hover:text-secondary transition duration-200">chatBot Interne</a>
+                <a href="#contact-form" class="btn-primary px-4 py-2 rounded-lg text-white">Lancer l'Audit IA</a>
+            </nav>
+        </div>
+    </header>
+
+    
+    <section class="bg-gray-50 flex justify-center p-4 sm:p-8">
     
     <div class="w-full max-w-6xl bg-white shadow-2xl rounded-xl overflow-hidden">
 
@@ -282,6 +366,7 @@
             </p>
         </footer>
     </div>
+    </section>
 
     <script type="module">
         // --- Configuration et Utilitaires de l'API Gemini pour le Chatbot ---
