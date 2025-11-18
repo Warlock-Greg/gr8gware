@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- TITRE SEO OPTIMISÉ -->
-    <title>GR8Gware | Agence de Développement Gameware, IA et Data Sur-Mesure à Paris, Rennes & Nantes</title>
+    <!-- TITRE SEO OPTIMISÉ avec la nouvelle identité -->
+    <title>GR8Gware | Atelier de Création Digitaliste - IA, UX & Intégration Systèmes</title>
     <!-- DESCRIPTION SEO OPTIMISÉE -->
-    <meta name="description" content="Agence de développement experte en Gameware, IA et Data. Nous analysons et développons des solutions pour Directeurs SI, Marketing, RH et Événementiel, intervenant sur Paris, Rennes et Nantes. Premier expert certifié IA GenLead par Google en France.">
+    <meta name="description" content="GR8Gware est votre Atelier de Création Digitaliste, expert en IA Générative (GenLead), UX et intégration DevOps. Nous co-construisons des solutions sur-mesure pour transformer vos visions métiers en systèmes numériques intelligents à Paris, Rennes et Nantes.">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Utilisation de la police Inter, professionnelle et moderne -->
+    <!-- Utilisation de la police Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+        /* NOUVELLE PALETTE (Inspirée du Tartan : Bleu, Vert, Violet) */
         :root {
-            --primary: #4F46E5; /* Indigo Vif - Professionnel/Tech */
-            --secondary: #F97316; /* Orange - Créativité/Action */
+            --primary: #7C3AED; /* Violet Vibrant - Technologie/Profondeur */
+            --secondary: #10B981; /* Vert Émeraude - Créativité/Croissance */
             --background-light: #F9FAFB; /* Gris très clair */
             --text-dark: #1F2937; /* Gris foncé pour le texte */
         }
@@ -23,6 +24,7 @@
             background-color: var(--background-light);
             color: var(--text-dark);
         }
+        /* Dégradé utilisant les nouvelles couleurs */
         .text-gradient-main {
             background-image: linear-gradient(to right, var(--primary), var(--secondary));
             -webkit-background-clip: text;
@@ -31,19 +33,19 @@
         .btn-primary {
             background-color: var(--primary);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
         }
         .btn-primary:hover {
-            background-color: #6366F1; /* Indigo plus clair */
+            background-color: #8B5CF6; /* Violet plus clair */
             transform: translateY(-1px);
         }
         .btn-secondary {
             background-color: var(--secondary);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
         }
         .btn-secondary:hover {
-            background-color: #FB923C;
+            background-color: #34D399; /* Vert plus clair */
             transform: translateY(-1px);
         }
         .card-light {
@@ -62,6 +64,7 @@
             width: 3rem;
             height: 3rem;
             font-weight: 700;
+            z-index: 10; /* Assure que le cercle est au-dessus de la ligne */
         }
         .step-line {
             position: absolute;
@@ -81,11 +84,32 @@
                 height: 2px;
             }
         }
+        /* Styles spécifiques pour la nouvelle section Défis/Solutions */
+        .challenge-card {
+            border-left: 5px solid var(--primary); /* Bordure Violet */
+        }
+        .solution-card {
+            border-left: 5px solid var(--secondary); /* Bordure Vert */
+        }
+        
+        /* Styles pour la nouvelle section Laboratoire/Activations */
+        .lab-card {
+            background-color: #F0F9FF; /* Bleu très clair, contraste avec le violet/vert */
+            border: 1px solid #93C5FD;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .lab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.1);
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Navbar : Design clair -->
+    <!-- Navbar -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <!-- Logo GR8Gware -->
@@ -95,10 +119,14 @@
             <nav class="hidden md:flex space-x-8 text-sm font-semibold">
                 <a href="#expertise" class="text-gray-600 hover:text-primary transition duration-200">Expertises</a>
                 <a href="#ia-coach" class="text-gray-600 hover:text-primary transition duration-200 font-bold text-primary">IA GenLead</a>
-                <a href="#process" class="text-gray-600 hover:text-primary transition duration-200">Processus</a>
-                <a href="#solutions" class="text-gray-600 hover:text-primary transition duration-200">Pour Qui ?</a>
+                <a href="#prestations" class="text-gray-600 hover:text-primary transition duration-200 font-bold">Nos Prestations</a> 
+                <!-- Nouveaux Liens vers les pages dédiées -->
+                <a href="digitalness.html" class="text-gray-600 hover:text-secondary transition duration-200 font-bold">Digitalness</a> 
+                <a href="ia-prompt-engineering.html" class="text-gray-600 hover:text-primary transition duration-200 font-bold">Prompt IA</a> 
+                <a href="#innovation" class="text-gray-600 hover:text-primary transition duration-200">Laboratoire</a> <!-- Lien local vers l'ancienne section Innovation -->
+                <a href="#solutions" class="text-gray-600 hover:text-primary transition duration-200">Nos Réalisations</a>
                 <!-- Lien Démarrer l'Analyse mis à jour -->
-                <a href="mailto:gregoiremm@gmail.com?subject=Demande%20d'Analyse%20de%20Projet%20GR8Gware" class="btn-primary px-4 py-2 rounded-lg text-white shadow-lg">Démarrer l'Analyse</a>
+                <a href="mailto:gregoiremm@gmail.com?subject=Demande%20de%20Co-Construction%20GR8Gware" class="btn-primary px-4 py-2 rounded-lg text-white shadow-lg">Lancer le Brief</a>
                 <!-- Bouton pour ouvrir le back-office -->
                 <button id="admin-button" class="text-gray-600 hover:text-secondary transition duration-200">Admin</button>
             </nav>
@@ -111,10 +139,14 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-start">
                 <a href="#expertise" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Expertises</a>
                  <a href="#ia-coach" class="block px-3 py-2 rounded-md text-base font-medium text-primary hover:bg-gray-100 font-bold">IA GenLead</a>
-                <a href="#process" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Notre Processus</a>
-                <a href="#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Pour Qui ?</a>
+                 <a href="#prestations" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 font-bold">Nos Prestations</a>
+                 <!-- Nouveaux Liens Mobile -->
+                 <a href="digitalness.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 font-bold">Digitalness</a> 
+                 <a href="ia-prompt-engineering.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 font-bold">Prompt IA</a> 
+                 <a href="#innovation" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Laboratoire</a>
+                <a href="#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Nos Réalisations</a>
                 <!-- Lien Démarrer l'Analyse mis à jour -->
-                <a href="mailto:gregoiremm@gmail.com?subject=Demande%20d'Analyse%20de%20Projet%20GR8Gware" class="w-full text-left btn-primary px-3 py-2 rounded-md text-white text-base font-medium mt-2">Démarrer l'Analyse</a>
+                <a href="mailto:gregoiremm@gmail.com?subject=Demande%20de%20Co-Construction%20GR8Gware" class="w-full text-left btn-primary px-3 py-2 rounded-md text-white text-base font-medium mt-2">Lancer le Brief</a>
                 <button id="admin-button-mobile" class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Admin</button>
             </div>
         </div>
@@ -143,150 +175,121 @@
     </div>
 
     <main>
-        <!-- Section Hero (Accueil) : Cible et Proposition de Valeur -->
+        <!-- Section Hero (Accueil) : Slogan Atelier Digitaliste -->
         <section id="hero" class="py-24 sm:py-32 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <!-- H1 Professionnel & SEO OPTIMISÉ -->
+                <!-- H1 Professionnel & SEO OPTIMISÉ avec l'identité Digitaliste -->
                 <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-snug text-gray-900">
-                    Agence de Développement <span class="text-gradient-main">Sur-Mesure</span> : Paris, Rennes, Nantes
+                    Votre <span class="text-gradient-main">Atelier de Création Digitaliste</span> et Intégrateur Système
                 </h1>
                 <!-- Contenu MODIFIABLE par le back-office et mis à jour via JS/Firestore -->
                 <p id="hero-slogan" class="mt-6 text-xl text-gray-600 max-w-4xl mx-auto">
-                    Nous sommes le partenaire technique des **Directeurs SI, Marketing, RH et Événementiel** en France. Nous transformons vos visions stratégiques en outils digitaux **conversnels**, priorisant l'exploitation de la donnée.
+                    Nous sommes les **Faiseurs** qui relient les besoins Métiers aux systèmes DevOps. Experts en **IA GenLead**, UX et intégration, nous transformons vos idées en solutions concrètes, sécurisées et intelligentes.
                 </p>
-                <!-- Liste des technologies clés pour le référencement et la crédibilité -->
+                <!-- Liste des compétences clés -->
                 <div class="mt-8 text-sm font-semibold text-gray-500 uppercase tracking-wider">
-                    Développement sur mesure : Gameware, Agents IA, Phygital, Data Exploitation, Web/Mobile.
+                    Expertise : IA Générative (GenLead) · UX Design · Intégration DevOps · Co-Construction · Phygital
                 </div>
                 <div class="mt-10 flex justify-center">
                     <!-- Lien Analyser mon Besoin Spécifique mis à jour -->
-                    <a href="mailto:gregoiremm@gmail.com?subject=Demande%20d'Analyse%20de%20Projet%20GR8Gware" class="btn-primary px-8 py-4 text-lg rounded-xl font-bold text-white shadow-xl">
-                        Analyser mon Besoin Spécifique
+                    <a href="mailto:gregoiremm@gmail.com?subject=Demande%20de%20Co-Construction%20GR8Gware" class="btn-primary px-8 py-4 text-lg rounded-xl font-bold text-white shadow-xl">
+                        Démarrer la Co-Construction
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Section 3: Expertises (Piliers pour les Directions Métier) -->
+        <!-- Section 3: Expertises (Piliers Digital, IA, UX, Système) -->
         <section id="expertise" class="py-20 sm:py-28 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <span class="text-sm font-semibold uppercase text-primary">Technologies Ciblées</span>
-                    <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">Deux Piliers d'Innovation Digitale</h2>
+                    <span class="text-sm font-semibold uppercase text-primary">Nos Savoir-Faire Fondamentaux</span>
+                    <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">Digital, IA, UX : Notre Triple Expertise de Faiseur</h2>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <!-- Pilier 1: Engagement & Créativité (Marketing/Événementiel) -->
-                    <div class="p-8 card-light rounded-xl border-t-4 border-secondary shadow-lg">
-                        <div class="text-secondary mb-4">
-                            <!-- Icône de Jeu/Créativité -->
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 100 4m-4 10a2 2 0 100-4m14-2a2 2 0 100-4M16 4a2 2 0 100 4m-3 4l-4-4m4 4l4 4m-4-4l-4 4m4-4l4-4"></path></svg>
-                        </div>
-                        <h3 class="text-3xl font-extrabold text-secondary mb-4">Activation & Gameware Sur-Mesure</h3>
-                        <p class="text-lg text-gray-700 mb-6">Nous développons des outils d'engagement qui captivent l'audience et génèrent des leads qualifiés pour les Directeurs Marketing et Événementiel.</p>
-
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-start">
-                                <span class="text-secondary mt-1 mr-3">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                </span>
-                                **Bornes Événementielles:** Jeux concours, quizzes interactifs, solutions phygitales fiables en environnement live.
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mt-1 mr-3">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                </span>
-                                **Activation par Mouvement:** Dispositifs de captation pour des expériences ludiques (ex: Just Dance) ou d'analyse (ex: swing de golf).
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mt-1 mr-3">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                </span>
-                                **UX/UI Poids Lourd:** Design simple et engageant, optimisé pour la performance et le taux de conversion.
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Pilier 2: Efficience & Innovation (SI/RH) -->
-                    <div class="p-8 card-light rounded-xl border-t-4 border-primary shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    <!-- Pilier 1: IA Générative (GenLead) -->
+                    <div class="p-8 card-light rounded-xl border-t-4 border-primary shadow-lg h-full">
                         <div class="text-primary mb-4">
-                            <!-- Icône d'IA/Efficience -->
+                            <!-- Icône IA (Couleur Primaire : Violet) -->
                             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l4 2V5l6 1v14.5a.5.5 0 01-.5.5h-9a.5.5 0 01-.5-.5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 11l6-6 6 6M9 11v11"></path></svg>
                         </div>
-                        <h3 class="text-3xl font-extrabold text-primary mb-4">Agents IA, Data & Efficience B2B</h3>
-                        <p class="text-lg text-gray-700 mb-6">Nous concevons des outils intelligents pour les Directeurs SI et RH, visant l'automatisation des tâches, l'amélioration de la prise de décision par la **data** et l'adoption d'une **interface conversationnelle**.</p>
-                        
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-start">
-                                <span class="text-primary mt-1 mr-3">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                </span>
-                                **IA Générative & Conversationale:** Implémentation sécurisée d'Agents LLM, Chatbots internes et outils d'aide à la décision pour la veille ou le support.
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-primary mt-1 mr-3">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                </span>
-                                **Optimisation de Processus:** Solutions d'inventaire piloté par l'IA et analyse prédictive des données de production et clients (collecte et exploitation).
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-primary mt-1 mr-3">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                </span>
-                                **Bien-être & E-learning:** Plateformes gamifiées pour le micro-apprentissage, l'onboarding et le suivi de la QVT.
-                            </li>
-                        </ul>
+                        <h3 class="text-3xl font-extrabold text-primary mb-4">L'IA de Production</h3>
+                        <p class="text-lg text-gray-700 mb-4">**GenLead & Prompt Engineering.** Nous ne faisons pas que des PoC. Nous concevons, entraînons et déployons des agents IA génératifs pour automatiser, converser et créer des expériences inédites (Phygital, Data Agents).</p>
+                        <p class="text-sm font-semibold text-gray-500">Ex: Systèmes d'agents pour bornes, interfaces IA pour grands écrans.</p>
+                        <a href="ia-prompt-engineering.html" class="text-primary hover:underline text-sm font-semibold mt-2 inline-block">Découvrir l'Accompagnement Prompt IA →</a>
+                    </div>
+
+                    <!-- Pilier 2: UX Stratégique & Digital -->
+                    <div class="p-8 card-light rounded-xl border-t-4 border-secondary shadow-lg h-full">
+                        <div class="text-secondary mb-4">
+                            <!-- Icône UX/Web (Couleur Secondaire : Vert) -->
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-3xl font-extrabold text-secondary mb-4">UX Maker & Digital</h3>
+                        <p class="text-lg text-gray-700 mb-4">Notre savoir-faire d'atelier garantit une ergonomie parfaite. Nous créons des interfaces intuitives, des plateformes web performantes et des solutions mobiles, centrées sur l'expérience utilisateur finale.</p>
+                        <p class="text-sm font-semibold text-gray-500">Ex: Outils de gamification pour RH, interfaces événementielles à haute conversion.</p>
+                        <a href="digitalness.html" class="text-secondary hover:underline text-sm font-semibold mt-2 inline-block">Découvrir les Activations Digitalness →</a>
+                    </div>
+                    
+                    <!-- Pilier 3: Intégration et Compréhension Système -->
+                    <div class="p-8 card-light rounded-xl border-t-4 border-gray-700 shadow-lg h-full">
+                        <div class="text-gray-700 mb-4">
+                            <!-- Icône DevOps/Système (Couleur Neutre : Gris) -->
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </div>
+                        <h3 class="text-3xl font-extrabold text-gray-700 mb-4">Lien Métier - DevOps</h3>
+                        <p class="text-lg text-gray-700 mb-4">Nous sommes le pont. Nous comprenons les enjeux SI et traduisons les besoins métiers complexes en architecture technique robuste. Nous sommes des intégrateurs nés, garantissant la cohérence des systèmes.</p>
+                        <p class="text-sm font-semibold text-gray-500">Ex: Audit et rationalisation du système d'information avant l'intégration de l'IA.</p>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- NOUVELLE SECTION: Coach IA Générative -->
-        <section id="ia-coach" class="py-20 sm:py-28 bg-primary/10 border-b border-t border-primary/20">
+        <!-- SECTION: IA GenLead (Mise en avant de la certification et du prompt) -->
+        <section id="ia-coach" class="py-20 sm:py-28 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:flex lg:items-center lg:justify-between">
+                <div class="lg:flex lg:items-center lg:justify-between gap-12">
                     <div class="lg:w-1/2 mb-10 lg:mb-0">
-                         <span class="text-sm font-semibold uppercase text-primary">Accompagnement Stratégique</span>
+                         <span class="text-sm font-semibold uppercase text-primary">Notre Excellence IA</span>
                          <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl leading-tight">
-                            Coach IA Générative : Expertise Certifiée <span class="text-primary">IA GenLead par Google</span>
+                            GR8Gware : Expert <span class="text-primary">IA GenLead par Google</span> pour la production
                         </h2>
                         <p class="mt-4 text-xl text-gray-700">
-                            Nous sommes fiers d'être parmi les premiers experts certifiés par Google. Cette reconnaissance assure une expertise de pointe pour l'intégration de l'IA Générative dans vos processus métiers, de l'idéation à la production.
+                            Nous ne faisons pas que programmer l'IA, nous la comprenons et la **pilotons par le prompt**. Notre maîtrise GenLead est la garantie d'une conception complète des modèles (Gemini, Open Source) pour des déploiements sécurisés et sur-mesure.
                         </p>
-                         <!-- Lien Démarrer mon Projet IA mis à jour -->
-                        <a href="mailto:gregoiremm@gmail.com?subject=Demande%20d'Accompagnement%20IA%20GenLead%20GR8Gware" class="btn-primary inline-flex mt-8 px-6 py-3 text-md rounded-xl font-bold text-white shadow-lg">
-                            Démarrer mon Projet IA
+                        <h3 class="text-2xl font-bold text-gray-900 mt-6 mb-3">Le Savoir-Faire du Prompt Engineering</h3>
+                        <p class="text-gray-700">
+                            L'efficacité d'un agent génératif repose sur la qualité de son instruction. Notre atelier excelle dans le **Prompt Engineering** de niveau production, assurant que l'IA fonctionne avec précision pour vos cas d'usage métier.
+                        </p>
+                         <!-- Lien vers la page IA dédiée -->
+                        <a href="ia-prompt-engineering.html" class="btn-primary inline-flex mt-8 px-6 py-3 text-md rounded-xl font-bold text-white shadow-lg">
+                            Optimiser mon Agent IA
                         </a>
                     </div>
 
-                    <div class="lg:w-5/12 p-6 card-light rounded-xl border-t-4 border-primary shadow-2xl">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            Notre Rôle : De l'Idée à l'Action
+                    <div class="lg:w-5/12 p-6 card-light rounded-xl border-t-4 border-secondary shadow-2xl">
+                        <h3 class="text-2xl font-bold text-secondary mb-4 flex items-center">
+                            <svg class="w-6 h-6 mr-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            Solutions IA Créatives (Exemples)
                         </h3>
                         <ul class="space-y-4 text-gray-600">
                             <li class="flex items-start">
-                                <span class="text-primary font-bold mr-2">1.</span>
+                                <span class="text-secondary font-bold mr-2">1.</span>
                                 <div>
-                                    <strong class="text-gray-900">Définition des Besoins :</strong> Identifier les cas d'usage à haute valeur ajoutée (ROI) pour l'IA Générative en entreprise.
+                                    <strong class="text-gray-900">Activation Phygitale & Langue des Signes :</strong> Agents IA connectés à des caméras pour interpréter les mouvements ou les gestes sur grands écrans, rendant les salons ou les points de vente véritablement interactifs.
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-primary font-bold mr-2">2.</span>
+                                <span class="text-secondary font-bold mr-2">2.</span>
                                 <div>
-                                    <strong class="text-gray-900">Cadrage Technique et Budget :</strong> Choisir l'architecture LLM (Open Source, Gemini, custom) et établir la feuille de route.
+                                    <strong class="text-gray-900">Just Dance IA & Gamification :</strong> Création de jeux d'activation événementielle basés sur la reconnaissance de mouvement par IA, pour engager le public de manière ludique et capter de la donnée.
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-primary font-bold mr-2">3.</span>
+                                <span class="text-secondary font-bold mr-2">3.</span>
                                 <div>
-                                    <strong class="text-gray-900">Pilotage du Projet (MVP) :</strong> Gestion agile et expertise des modèles pour une preuve de concept rapide et sécurisée.
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-primary font-bold mr-2">4.</span>
-                                <div>
-                                    <strong class="text-gray-900">Mise en Production et Scalabilité :</strong> Déploiement auditable, monitoring et passage à l'échelle pour l'ensemble de votre organisation.
+                                    <strong class="text-gray-900">Bornes d'Agents Génératifs :</strong> Mise en place d'agents IA hautement spécialisés, intégrés dans des bornes physiques, pour offrir des conseils ultra-personnalisés ou des simulations complexes.
                                 </div>
                             </li>
                         </ul>
@@ -295,46 +298,124 @@
             </div>
         </section>
 
-        <!-- Section 2: Le Processus (Répond au "on l'analyse et on le développe") -->
-        <section id="process" class="py-20 sm:py-28 bg-background-light">
+        <!-- SECTION: Défis Client et Prestations Ciblées -->
+        <section id="prestations" class="py-20 sm:py-28 bg-primary/10 border-b border-t border-primary/20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <span class="text-sm font-semibold uppercase text-secondary">Notre Engagement</span>
-                    <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">Un Processus Séquencé pour une Réussite Garantie</h2>
-                    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">De l'idée initiale à la mise en production, nous assurons une méthodologie agile, transparente et axée sur l'utilisateur final.</p>
+                    <span class="text-sm font-semibold uppercase text-primary">Prestations ciblées</span>
+                    <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">De vos Défis à nos Solutions d'Atelier</h2>
+                    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">Chaque problème métier a une solution Digitaliste et Intégratrice. Voici comment nous transformons les défis en systèmes performants.</p>
                 </div>
 
-                <div class="relative grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mt-12">
-                    <!-- Step 1: Analyse & Spécification -->
-                    <div class="relative flex flex-col items-center text-center p-6 card-light rounded-xl h-full lg:mb-10">
-                        <div class="step-icon lg:mt-[-4rem] absolute lg:relative top-0 mt-[-2.5rem] lg:top-auto">1</div>
-                        <div class="mt-8 lg:mt-0">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Analyse & Stratégie</h3>
-                            <p class="text-gray-600">Comprendre votre écosystème (clients, collaborateurs, data). Nous définissons l'architecture technique idéale et les KPI de succès pour votre direction métier.</p>
+                <div class="space-y-12">
+                    <!-- Défi/Solution 1: IA en Production -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center card-light rounded-xl p-6">
+                        <div class="p-4 challenge-card rounded-lg h-full">
+                            <h3 class="text-2xl font-bold text-primary mb-2">Défi Client : Mon PoC IA ne passe pas en production.</h3>
+                            <p class="text-gray-700">Votre prototype d'IA reste bloqué au stade de la preuve de concept (PoC) et ne parvient pas à s'intégrer de manière fiable et sécurisée dans votre écosystème SI.</p>
+                        </div>
+                        <div class="flex justify-center items-center text-5xl text-gray-400 font-extrabold">
+                            <svg class="w-12 h-12 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </div>
+                        <div class="p-4 solution-card rounded-lg h-full">
+                            <h3 class="text-2xl font-bold text-secondary mb-2">Notre Prestation : Pilotage IA GenLead de Production.</h3>
+                            <p class="text-gray-700">**Nous vous livrons l'agent IA prêt à l'emploi.** Intégration DevOps, sécurisation du pipeline et expertise GenLead pour transformer l'essai en performance système durable.</p>
                         </div>
                     </div>
                     
-                    <!-- Ligne de connexion pour les grands écrans -->
-                    <div class="hidden lg:block absolute lg-step-line left-1/4 transform -translate-x-1/2 w-1/2 h-0.5 bg-gray-300 z-0"></div>
-                    
-                    <!-- Step 2: Développement Agile -->
-                    <div class="relative flex flex-col items-center text-center p-6 card-light rounded-xl h-full lg:mb-10">
-                        <div class="step-icon lg:mt-[-4rem] absolute lg:relative top-0 mt-[-2.5rem] lg:top-auto">2</div>
-                        <div class="mt-8 lg:mt-0">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Développement & Tests (MVP)</h3>
-                            <p class="text-gray-600">Conception des wireframes, itérations rapides et développement du Minimum Viable Product (MVP). Les tests utilisateurs sont intégrés pour garantir l'UX/UI.</p>
+                    <!-- Défi/Solution 2: UX et Conversion -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center card-light rounded-xl p-6">
+                        <div class="p-4 challenge-card rounded-lg h-full">
+                            <h3 class="text-2xl font-bold text-primary mb-2">Défi Client : L'UX ne génère plus de conversion.</h3>
+                            <p class="text-gray-700">Vos plateformes existantes souffrent d'une ergonomie obsolète ou d'un manque d'engagement, entraînant une faible rétention ou un taux de transformation insuffisant.</p>
+                        </div>
+                        <div class="flex justify-center items-center text-5xl text-gray-400 font-extrabold">
+                             <svg class="w-12 h-12 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </div>
+                        <div class="p-4 solution-card rounded-lg h-full">
+                            <h3 class="text-2xl font-bold text-secondary mb-2">Notre Prestation : Atelier UX & Création de Plateformes.</h3>
+                            <p class="text-gray-700">**Refonte UX stratégique et design Maker.** Nous concevons des interfaces modernes (web, mobile, grands écrans) avec une attention particulière aux parcours pour maximiser l'impact business.</p>
                         </div>
                     </div>
-                    
-                    <!-- Ligne de connexion pour les grands écrans -->
-                    <div class="hidden lg:block absolute lg-step-line left-3/4 transform -translate-x-1/2 w-1/2 h-0.5 bg-gray-300 z-0"></div>
 
-                    <!-- Step 3: Déploiement & Optimisation -->
-                    <div class="relative flex flex-col items-center text-center p-6 card-light rounded-xl h-full lg:mb-10">
-                        <div class="step-icon lg:mt-[-4rem] absolute lg:relative top-0 mt-[-2.5rem] lg:top-auto">3</div>
-                        <div class="mt-8 lg:mt-0">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Déploiement & Scalabilité</h3>
-                            <p class="text-gray-600">Mise en production sécurisée et support post-lancement. Nous construisons des solutions modulaires et évolutives pour accompagner votre croissance.</p>
+                    <!-- Défi/Solution 3: Sils Métiers/SI -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center card-light rounded-xl p-6">
+                        <div class="p-4 challenge-card rounded-lg h-full">
+                            <h3 class="text-2xl font-bold text-primary mb-2">Défi Client : Mes équipes Métier et SI ne communiquent pas.</h3>
+                            <p class="text-gray-700">Les besoins fonctionnels sont mal traduits en spécifications techniques, ralentissant les projets et créant des frictions entre les départements Métier et votre DSI/équipes DevOps.</p>
+                        </div>
+                        <div class="flex justify-center items-center text-5xl text-gray-400 font-extrabold">
+                            <svg class="w-12 h-12 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </div>
+                        <div class="p-4 solution-card rounded-lg h-full">
+                            <h3 class="text-2xl font-bold text-secondary mb-2">Notre Prestation : Facilitation et Intégration Système.</h3>
+                            <p class="text-gray-700">**Nous sommes le Faiseur-traducteur.** Audit du système d'information existant, définition d'architectures robustes et gestion de projet centrée sur la **Co-Construction** fluide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION: Innovation, Créativité et Activations de Marque -->
+        <section id="innovation" class="py-20 sm:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center mb-16">
+                    <span class="text-sm font-semibold uppercase text-secondary">Idées & Expérimentation</span>
+                    <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">Laboratoire & Activations : L'Atelier d'Exploration Créative</h2>
+                    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">Vous avez un brief, une idée folle ? Nous la rendons réelle. Nous utilisons l'IA (reconnaissance de mouvement, voix) et l'UX pour créer des activations de marque à fort impact.</p>
+                </div>
+
+                <div class="lg:flex lg:items-start lg:justify-between gap-12">
+                    <!-- Bloc Gauche : Philosophie et Digitalness -->
+                    <div class="lg:w-1/2 mb-10 lg:mb-0">
+                         <h3 class="text-3xl font-extrabold text-primary mb-4">La Digitalness : Digital + Fitness (Activation Tendance)</h3>
+                         <p class="mt-4 text-lg text-gray-700 mb-6">
+                            Nous avons développé l'offre **Digitalness**, un mix puissant de Digital et de Fitness pour des activations ultra-tendances et éducatives. Notre approche est simple : créer l'engagement sans la contrainte logistique d'une borne complexe.
+                         </p>
+                         
+                         <h4 class="text-2xl font-bold text-gray-900 mb-3">Cas Concret : L'Impact Positif de l'IA</h4>
+                         <div class="lab-card">
+                             <p class="text-sm text-gray-600">
+                                Le **Just Dance IA** (Développé pour l'agence d'une fédération de cardiologues à la Paris Game Week) n'était pas un jeu, c'était un outil d'éducation. L'IA a permis de suivre les mouvements pour démontrer ludiquement les **bienfaits de l'activité physique quotidienne**.
+                            </p>
+                         </div>
+                         
+                         <p class="text-gray-700 mt-6">
+                            Notre atelier est un terrain d'exploration constant. Nous aimons prototyper des solutions simples à mettre en œuvre mais techniquement audacieuses.
+                         </p>
+                          <a href="digitalness.html" class="text-secondary hover:underline text-sm font-semibold mt-2 inline-block">En savoir plus sur la Digitalness et les Roadshows →</a>
+                    </div>
+
+                    <!-- Bloc Droit : Projets d'Exploration (3 colonnes) -->
+                    <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        
+                        <div class="lab-card border-t-4 border-primary">
+                            <h4 class="text-xl font-bold text-gray-900 flex items-center mb-2">
+                                <svg class="w-6 h-6 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                Reconnaissance Vocale IA
+                            </h4>
+                            <p class="text-gray-700 text-sm">Développement d'une IA capable d'analyser le pire accent français en anglais pour des outils de formation linguistique ludiques.</p>
+                        </div>
+                        
+                        <div class="lab-card border-t-4 border-secondary">
+                            <h4 class="text-xl font-bold text-gray-900 flex items-center mb-2">
+                                <svg class="w-6 h-6 mr-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                Just Swing (Golf)
+                            </h4>
+                            <p class="text-gray-700 text-sm">Utilisation de la reconnaissance de mouvement par IA pour analyser la biomécanique du swing de golf, parfait pour des activations sur des salons spécialisés.</p>
+                        </div>
+                        
+                        <div class="lab-card border-t-4 border-primary">
+                            <h4 class="text-xl font-bold text-gray-900 flex items-center mb-2">
+                                <svg class="w-6 h-6 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m-9 9h3M3 12h18"></path></svg>
+                                Just Bike (Challenge sans vélo)
+                            </h4>
+                            <p class="text-gray-700 text-sm">Création d'un "vélo challenge" nouvelle génération utilisant l'IA pour simuler l'effort de cyclisme et gamifier la participation, sans avoir besoin d'un vrai vélo physique.</p>
+                        </div>
+                         <div class="lab-card border-t-4 border-secondary flex flex-col justify-center">
+                            <p class="text-gray-700 text-sm italic text-center font-semibold text-secondary">
+                                "Un brief, une idée qu'il faut rendre réelle : nous sommes là."
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -342,13 +423,70 @@
         </section>
 
 
-        
-        <!-- Section 4: Cibles (Pour Qui?) -->
-        <section id="solutions" class="py-20 sm:py-28 bg-white">
+        <!-- SECTION: Co-Construction (Processus) -->
+        <section id="process" class="py-20 sm:py-28 bg-primary/10"> <!-- Changement de couleur de fond pour un meilleur contraste -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <span class="text-sm font-semibold uppercase text-secondary">Notre Public Cible</span>
-                    <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">Nous Parlons le Langage de Chaque Direction</h2>
+                    <span class="text-sm font-semibold uppercase text-primary">Notre Méthode d'Atelier</span>
+                    <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">La Co-Construction : De l'Idée au Système Intégré</h2>
+                    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">Nous travaillons main dans la main avec vos équipes : vous apportez le brief métier, nous apportons le savoir-faire de faiseur pour une solution optimisée.</p>
+                </div>
+
+                <div class="relative grid grid-cols-1 lg:grid-cols-4 gap-8 mt-12">
+                    <!-- Step 1: Le Brief Métier -->
+                    <div class="relative flex flex-col items-center text-center p-6 card-light rounded-xl h-full lg:mb-10 border-b-4 border-secondary">
+                        <div class="step-icon lg:mt-[-4rem] absolute lg:relative top-0 mt-[-2.5rem] lg:top-auto bg-secondary">1</div>
+                        <div class="mt-8 lg:mt-0">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Brief & Audit (Métier)</h3>
+                            <p class="text-gray-600 text-sm">Comprendre les défis de votre Direction (Marketing, SI, RH). Nous définissons ensemble les objectifs finaux et le potentiel d'intégration (IA, Digital).</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ligne de connexion pour les grands écrans -->
+                    <div class="hidden lg:block absolute lg-step-line left-[12.5%] transform translate-x-1/2 w-[25%] h-0.5 bg-gray-300 z-0"></div>
+
+                    <!-- Step 2: Vision d'Atelier -->
+                    <div class="relative flex flex-col items-center text-center p-6 card-light rounded-xl h-full lg:mb-10 border-b-4 border-primary">
+                        <div class="step-icon lg:mt-[-4rem] absolute lg:relative top-0 mt-[-2.5rem] lg:top-auto">2</div>
+                        <div class="mt-8 lg:mt-0">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Vision & Cadrage (Faiseur)</h3>
+                            <p class="text-gray-600 text-sm">Notre atelier propose l'architecture technique (UX/DevOps) et la meilleure implémentation IA (GenLead). Cadrage du MVP et validation du ROI.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ligne de connexion pour les grands écrans -->
+                    <div class="hidden lg:block absolute lg-step-line left-[50%] transform -translate-x-1/2 w-[25%] h-0.5 bg-gray-300 z-0"></div>
+
+                    <!-- Step 3: Fabrication & Intégration -->
+                    <div class="relative flex flex-col items-center text-center p-6 card-light rounded-xl h-full lg:mb-10 border-b-4 border-secondary">
+                        <div class="step-icon lg:mt-[-4rem] absolute lg:relative top-0 mt-[-2.5rem] lg:top-auto bg-secondary">3</div>
+                        <div class="mt-8 lg:mt-0">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Développement (Agile)</h3>
+                            <p class="text-gray-600 text-sm">Fabrication du système. Itérations courtes, tests intégrés, et implémentation sécurisée des agents génératifs. Le lien Métier-DevOps est permanent.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ligne de connexion pour les grands écrans -->
+                    <div class="hidden lg:block absolute lg-step-line left-[75%] transform translate-x-1/2 w-[25%] h-0.5 bg-gray-300 z-0"></div>
+                    
+                    <!-- Step 4: Déploiement & Scalabilité -->
+                    <div class="relative flex flex-col items-center text-center p-6 card-light rounded-xl h-full lg:mb-10 border-b-4 border-primary">
+                        <div class="step-icon lg:mt-[-4rem] absolute lg:relative top-0 mt-[-2.5rem] lg:top-auto">4</div>
+                        <div class="mt-8 lg:mt-0">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Déploiement & Système</h3>
+                            <p class="text-gray-600 text-sm">Mise en production, documentation SI, et optimisation continue. La solution est intégrée, fiable et prête à scaler dans votre écosystème SI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Réalisations/Cibles (Mise en avant des Directeurs Métiers) -->
+        <section id="solutions" class="py-20 sm:py-28 bg-background-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-sm font-semibold uppercase text-secondary">Le Résultat de Notre Atelier</span>
+                    <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">Solutions Faiseur pour Chaque Direction Métier</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -358,7 +496,7 @@
                             <svg class="w-10 h-10 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-8v8m-4-4h4m-2 0V4m0 16a2 2 0 100-4 2 2 0 000 4z"></path></svg>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Direction Marketing</h3>
-                        <p class="text-gray-600 text-sm">Convertir les leads, augmenter l'engagement de marque avec des expériences Gameware innovantes.</p>
+                        <p class="text-gray-600 text-sm">Nous créons des expériences d'activation digitales et phygitales (Ex: Just Dance IA) pour un engagement et une conversion optimaux.</p>
                     </div>
                     <!-- Directeur Événementiel -->
                     <div class="p-6 card-light rounded-xl text-center hover:shadow-xl transition duration-300 border-b-4 border-secondary">
@@ -366,7 +504,7 @@
                             <svg class="w-10 h-10 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.5 4.5M15 10l-4.5 4.5M15 10l4.5-4.5M15 10l-4.5-4.5m4.5 4.5h-4.5m4.5 0v4.5m0-4.5V4m0 16a2 2 0 100-4 2 2 0 000 4z"></path></svg>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Direction Événementielle</h3>
-                        <p class="text-gray-600 text-sm">Fiabiliser les activations de stand et les dispositifs phygitaux pour un impact maximal.</p>
+                        <p class="text-gray-600 text-sm">Dispositifs IA sécurisés (Ex: Langue des signes sur grand écran) et bornes interactives fiables pour l'environnement live.</p>
                     </div>
                     <!-- Directeur SI / DSI -->
                     <div class="p-6 card-light rounded-xl text-center hover:shadow-xl transition duration-300 border-b-4 border-primary">
@@ -374,7 +512,7 @@
                             <svg class="w-10 h-10 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-1-3M14 8c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6h-6m-6-6V6m0 12v-2m-6-2H6m12 0h-2"></path></svg>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Direction SI / DSI</h3>
-                        <p class="text-gray-600 text-sm">Sécuriser l'intégration des solutions IA et optimiser l'exploitation des infrastructures de données.</p>
+                        <p class="text-gray-600 text-sm">Intégration d'agents IA conformes, et rationalisation de vos systèmes grâce à notre expertise du lien Métier-DevOps.</p>
                     </div>
                     <!-- Directeur RH -->
                     <div class="p-6 card-light rounded-xl text-center hover:shadow-xl transition duration-300 border-b-4 border-primary">
@@ -382,7 +520,7 @@
                             <svg class="w-10 h-10 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20h-2m2 0h2m-4-10a3 3 0 11-6 0 3 3 0 016 0zm-2 0a1 1 0 10-2 0 1 1 0 002 0zM12 4a3 3 0 00-3 3v1a2 2 0 002 2h2a2 2 0 002-2V7a3 3 0 00-3-3z"></path></svg>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Direction RH</h3>
-                        <p class="text-gray-600 text-sm">Développer des outils d'onboarding gamifiés et mesurer l'impact des initiatives QVT par la donnée.</p>
+                        <p class="text-gray-600 text-sm">Plateformes gamifiées pour l'onboarding et outils IA pour l'aide à la décision sur la QVT et le micro-apprentissage.</p>
                     </div>
                 </div>
             </div>
@@ -391,8 +529,8 @@
         <!-- Section Contact / CTA -->
         <section id="contact" class="py-20 sm:py-28 bg-primary">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-extrabold text-white sm:text-5xl">Prêt à Transformer votre Vision en Solution Digitale ?</h2>
-                <p class="mt-4 text-xl text-indigo-200">Contactez nos experts pour une analyse gratuite de votre besoin en Gameware, IA ou Data.</p>
+                <h2 class="text-4xl font-extrabold text-white sm:text-5xl">Lancez votre Brief : L'Atelier GR8Gware vous Attend</h2>
+                <p class="mt-4 text-xl text-indigo-200">De l'idée métier au système intégré, contactez-nous pour une première analyse de votre projet IA, Digital ou UX.</p>
                 <!-- Lien Contact Maintenant mis à jour -->
                 <a href="mailto:gregoiremm@gmail.com?subject=Demande%20de%20Contact%20GR8Gware%20-%20Informations" class="btn-secondary inline-flex mt-8 px-10 py-4 text-xl rounded-xl font-bold text-white shadow-xl hover:bg-orange-600">
                     Prendre Contact Maintenant
@@ -405,7 +543,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
-            <p class="text-lg font-extrabold text-white mb-2">GR8<span class="text-secondary">G</span>ware</p>
+            <p class="text-lg font-extrabold text-white mb-2">GR8<span class="text-secondary">G</span>ware - Atelier Digitaliste</p>
             <p class="text-sm">&copy; 2025 GR8Gware. Tous droits réservés.</p>
             <p class="text-xs mt-1">Paris, Rennes, Nantes.</p>
             <!-- Ajout de l'email dans le pied de page à titre informatif -->
