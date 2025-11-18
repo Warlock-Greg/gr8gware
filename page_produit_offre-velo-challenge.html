@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vélo Challenge Pro - Offre Spéciale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .product-image {
+            /* Utilisation d'une image placeholder */
+            background-image: url('https://placehold.co/600x400/1e40af/ffffff?text=Vélo+Challenge+Pro');
+            background-size: cover;
+            background-position: center;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .chatbot-container {
+            min-height: 500px;
+            max-height: 70vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .messages-list {
+            flex-grow: 1;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
+        
+        <!-- Colonne 1: Contenu de la Page Produit -->
+        <main class="lg:w-2/3 bg-white p-6 sm:p-10 rounded-xl shadow-2xl border border-gray-100">
+            <a href="index.html" class="text-indigo-600 hover:text-indigo-800 font-semibold mb-6 inline-block">&larr; Retour à l'accueil</a>
+
+            <div class="product-grid">
+                <!-- Section Image -->
+                <div class="h-96 product-image mb-6"></div>
+
+                <!-- Section Détails -->
+                <div id="product-details">
+                    <h1 class="text-4xl font-extrabold text-gray-900 mb-2">
+                        OFFRE SPÉCIALE : Vélo Challenge Pro - Édition Limitée
+                    </h1>
+                    <p class="text-2xl text-red-600 font-bold mb-4">
+                        Prix : 1 499,99 € <span class="text-lg text-gray-500 line-through ml-2">1 999,99 €</span>
+                    </p>
+                    <div class="mb-6">
+                        <span class="inline-block bg-yellow-400 text-yellow-900 text-sm font-semibold px-3 py-1 rounded-full">
+                            -25% de Réduction !
+                        </span>
+                        <span class="inline-block bg-green-500 text-white text-sm font-semibold px-3 py-1 rounded-full ml-2">
+                            Livraison Gratuite
+                        </span>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3 border-b pb-1">
+                        Description de l'Offre
+                    </h2>
+                    <p class="text-gray-700 mb-6">
+                        Le Vélo Challenge Pro est conçu pour les cyclistes exigeants. Léger, aérodynamique, et équipé des dernières technologies, il est parfait pour les compétitions et les longues distances. Cette offre limitée inclut le vélo, des accessoires exclusifs et une garantie prolongée.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3 border-b pb-1">
+                        Spécifications Techniques
+                    </h2>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6 ml-4">
+                        <li>**Cadre** : Carbone UD (Ultra-Directionnel)</li>
+                        <li>**Transmission** : Shimano Ultegra Di2, 11 vitesses (électronique)</li>
+                        <li>**Poids Total** : 7.2 kg (Taille M)</li>
+                        <li>**Roues** : Jantes aérodynamiques en aluminium 50mm, pneus Michelin Pro 4 Endurance</li>
+                        <li>**Garantie** : 5 ans sur le cadre, 2 ans sur les composants (Extension de 3 ans offerte sur le cadre avec cette offre)</li>
+                        <li>**Couleurs Disponibles** : Noir Mat, Rouge Carbone</li>
+                        <li>**Accessoires Inclus (Offre Spéciale)** : Compteur GPS (valeur 250€) et une paire de pédales automatiques Look.</li>
+                        <li>**Politique de Retour** : 30 jours pour retourner l'article, à condition qu'il soit dans son emballage original et n'ait pas été utilisé.</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3 border-b pb-1">
+                        Frais et Délais de Livraison
+                    </h2>
+                    <p class="text-gray-700 mb-6">
+                        La livraison est **gratuite** pour cette offre spéciale. Le délai standard est de **4 à 7 jours ouvrés** en France Métropolitaine. Les livraisons en Corse et DOM-TOM prennent un délai additionnel de 5 jours.
+                    </p>
+
+                    <button class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700 transition duration-150 shadow-lg">
+                        Ajouter au Panier
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Colonne 2: Chatbot Agent Produit -->
+        <aside class="lg:w-1/3 sticky top-8 h-full">
+            <div class="chatbot-container bg-white rounded-xl shadow-2xl p-6 border border-gray-100">
+                <h2 class="text-2xl font-bold text-center text-gray-900 mb-4 border-b pb-3">
+                    Agent Support Client (Grounding Produit)
+                </h2>
+                <p class="text-sm text-center text-gray-500 mb-4">
+                    Posez des questions sur l'offre "Vélo Challenge Pro". L'Agent se base UNIQUEMENT sur les détails de cette page.
+                </p>
+
+                <!-- Zone des messages -->
+                <div id="messages-list-product" class="messages-list space-y-4 p-4 mb-4 bg-gray-50 rounded-lg border">
+                    <!-- Les messages s'afficheront ici -->
+                    <div class="flex justify-start">
+                        <div class="bg-indigo-100 text-indigo-900 p-3 rounded-xl rounded-tl-none max-w-xs">
+                            Bienvenue ! Je suis votre assistant. Posez-moi une question sur les spécifications, le prix, ou la livraison du Vélo Challenge Pro. Par exemple : "Quel est le poids total du vélo ?"
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulaire d'entrée -->
+                <div class="flex">
+                    <input type="text" id="user-input-product" placeholder="Votre question sur le produit..." class="flex-grow p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:border-indigo-500" onkeydown="if(event.key === 'Enter') sendProductMessage()">
+                    <button onclick="sendProductMessage()" id="send-button-product" class="bg-green-600 text-white p-3 rounded-r-lg hover:bg-green-700 transition duration-150 flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </div>
+                <div id="loading-indicator-product" class="text-center text-sm text-green-500 mt-2 hidden">
+                    L'Agent Support est en train d'analyser les détails du produit...
+                </div>
+                <div id="error-message-product" class="text-center text-sm text-red-500 mt-2 hidden">
+                    Une erreur est survenue lors de la communication avec l'API. Veuillez réessayer.
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <script type="text/javascript">
+        // Fonctionnalités du Chatbot Agent Produit
+        
+        // Clé API vide pour le Canvas
+        const apiKey = "";
+        const modelName = 'gemini-2.5-flash-preview-09-2025';
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+
+        const messagesList = document.getElementById('messages-list-product');
+        const userInput = document.getElementById('user-input-product');
+        const sendButton = document.getElementById('send-button-product');
+        const loadingIndicator = document.getElementById('loading-indicator-product');
+        const errorMessageDiv = document.getElementById('error-message-product');
+        
+        // On récupère le contenu pertinent de la page (les détails du produit)
+        const productDetails = document.getElementById('product-details').innerText;
+
+        // Historique de la conversation (pour le contexte)
+        let chatHistory = [];
+        
+        /**
+         * Ajoute un message à la liste des messages
+         * @param {string} text - Le contenu du message.
+         * @param {string} sender - 'user' ou 'bot'.
+         */
+        function displayMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('flex', 'mb-2');
+
+            if (sender === 'user') {
+                messageDiv.classList.add('justify-end');
+                messageDiv.innerHTML = `
+                    <div class="bg-green-600 text-white p-3 rounded-xl rounded-br-none max-w-xs sm:max-w-md shadow-md">
+                        ${text}
+                    </div>
+                `;
+            } else {
+                messageDiv.classList.add('justify-start');
+                // Nettoyer le texte du bot
+                const cleanText = text.replace(/(\*\*|__)/g, ''); 
+                messageDiv.innerHTML = `
+                    <div class="bg-gray-200 text-gray-800 p-3 rounded-xl rounded-tl-none max-w-xs sm:max-w-md shadow-md">
+                        ${cleanText}
+                    </div>
+                `;
+            }
+            messagesList.appendChild(messageDiv);
+            messagesList.scrollTop = messagesList.scrollHeight; // Scroll vers le bas
+        }
+
+        /**
+         * Gère l'envoi du message utilisateur.
+         */
+        async function sendProductMessage() {
+            const userText = userInput.value.trim();
+            if (userText === '') return;
+
+            displayMessage(userText, 'user');
+            userInput.value = '';
+            
+            // Ajouter le message utilisateur à l'historique
+            chatHistory.push({ role: "user", parts: [{ text: userText }] });
+
+            // Afficher l'indicateur de chargement
+            loadingIndicator.classList.remove('hidden');
+            sendButton.disabled = true;
+            errorMessageDiv.classList.add('hidden');
+            
+            // Le prompt système pour guider le modèle à utiliser uniquement les détails du produit
+            const systemPrompt = `Tu es l'Agent de Support Client. Ton rôle est de répondre aux questions de l'utilisateur EN FRANÇAIS en te basant STRICTEMENT et UNIQUEMENT sur les détails du produit "Vélo Challenge Pro" ci-dessous. Tu dois être amical(e) et concis(e). Ne fais aucune référence à des connaissances externes ni à d'autres produits.
+
+            Détails du Produit :
+            ---
+            ${productDetails}
+            ---
+
+            Si la réponse à la question de l'utilisateur ne se trouve pas dans ces détails (par exemple : "Où est mon colis ?"), tu dois répondre : "Je ne peux répondre à cette question. Veuillez contacter notre service après-vente pour une requête personnalisée."`;
+
+            try {
+                const payload = {
+                    contents: chatHistory,
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    },
+                };
+
+                let response;
+                let success = false;
+                let retries = 0;
+                const maxRetries = 5;
+                let delay = 1000; // 1 second
+
+                // Implémentation de l'exponential backoff
+                while (!success && retries < maxRetries) {
+                    try {
+                        response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (response.ok) {
+                            success = true;
+                        } else if (response.status === 429) {
+                            // Trop de requêtes (throttling)
+                            console.warn(`Tentative ${retries + 1} : Trop de requêtes. Attente de ${delay / 1000}s.`);
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                            delay *= 2; // Doubler le délai
+                        } else {
+                            // Autres erreurs HTTP
+                            throw new Error(`Erreur HTTP: ${response.status}`);
+                        }
+                    } catch (error) {
+                        console.error("Erreur lors de la tentative de fetch:", error);
+                        if (retries < maxRetries - 1) {
+                            console.warn(`Tentative ${retries + 1} : Erreur. Attente de ${delay / 1000}s avant de réessayer.`);
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                            delay *= 2;
+                        } else {
+                            throw error; // Propager l'erreur après la dernière tentative
+                        }
+                    }
+                    retries++;
+                }
+
+                if (!success) {
+                    throw new Error("Échec de la communication avec l'API après plusieurs tentatives.");
+                }
+
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+
+                let botText = "Désolé, je n'ai pas pu générer de réponse.";
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    botText = candidate.content.parts[0].text;
+                }
+
+                displayMessage(botText, 'bot');
+                
+                // Ajouter la réponse du bot à l'historique
+                chatHistory.push({ role: "model", parts: [{ text: botText }] });
+
+            } catch (error) {
+                console.error("Erreur fatale de l'API:", error);
+                errorMessageDiv.classList.remove('hidden');
+                displayMessage("Désolé, je ne parviens pas à traiter votre demande pour le moment. Veuillez vérifier la console pour les détails de l'erreur.", 'bot');
+            } finally {
+                loadingIndicator.classList.add('hidden');
+                sendButton.disabled = false;
+                userInput.focus();
+            }
+        }
+
+        // S'assurer que le focus est sur l'input au chargement
+        window.onload = () => {
+            userInput.focus();
+        };
+
+    </script>
+</body>
+</html>
